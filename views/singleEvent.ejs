@@ -1,0 +1,100 @@
+<% include partials/header %>
+    <section class="home" id="home">
+        <div class="content">
+            <h3 class="title-event">
+                <span>
+          <%= event.title %>
+        </span>
+            </h3>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+
+        <div class="card">
+            <div>
+                Title :
+                <%= event.title %>
+            </div>
+            <div>
+                Summary :
+                <%= event.summary %>
+            </div>
+            <div>
+                Start Date :
+                <%= start_date %>
+            </div>
+            <div>
+                End Date :
+                <%= end_date %>
+            </div>
+            <div>
+                Category :
+                <%= event.event_category %>
+            </div>
+            <div>
+                Location :
+                <%= event.location %>
+            </div>
+            <div>
+                Host By :
+                <%= event.host %>
+            </div>
+            <div>
+
+            </div>
+            <div>
+                <a class="btn like" href="/events/<%= event.id %>/like">Like</a>
+                <a class="btn dislike" href="/events/<%= event.id %>/dislike">Dislike</a>
+                <span>Like : <%= event.likes %></span>
+            </div>
+            <div>
+                <a class="btn edit" href="/events/<%= event.id %>/edit">Edit</a>
+                <a class="btn delete" href="/events/<%= event.id %>/delete">Delete</a>
+            </div>
+        </div>
+        <div class="remark">
+            <div class="title">
+                <h1>Remarks: </h1>
+            </div>
+            <div class="remark-form">
+                <form action="/events/<%= event.id %>/remarks" method="POST">
+                    <div class="inputBox">
+                        <textarea class="form-control" id="remark" name="remark" rows="3" placeholder="Remark about the Event"></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="author" name="author" placeholder="Author Name">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+
+            <div class="remark-list">
+                <% event.remarks.forEach(event=> { %>
+                    <div class="remark-list-item">
+                        <div class="remark-author">Author:
+                            <%= event.author %>
+                        </div>
+                        <div class="remark-description">Remark:
+                            <%= event.remark %>
+                        </div>
+                        <div class="interactions">
+                            <div>Likes:
+                                <%= event.likes %>
+                            </div>
+                            <a class="likes" href="/remarks/<%= event.id %>/like"> Likes </a>
+                            <a class="dislikes" href="/remarks/<%= event.id %>/dislike"> Dislike </a>
+                        </div>
+                        <div class="action-button">
+                            <a href="/remarks/<%= event.id %>/edit" class="edit">Edit</a>
+                            <a href="/remarks/<%= event.id %>/delete" class="delete">Delete</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+
+    </section>
+
+    <% include partials/footer %>

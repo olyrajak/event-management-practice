@@ -1,0 +1,46 @@
+<% include partials/header %>
+
+
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us </h1>
+        <div class="row">
+
+            <div class="content">
+                <h3>Create Your Events to listed here</h3>
+                <a href="/events/new" class="btn">Create Event</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service" id="service">
+        <h1 class="heading"> All <span>events</span> </h1>
+        <% events.forEach(function(event) { %>
+            <div class="event-list-row">
+                <a class="content" href="/events/<%= event.id %>">
+                    <h3>
+                        <%= event.title %>
+                    </h3>
+                    <p>
+                        <%= event.summary %>
+                    </p>
+                    <p>
+                        Location: <%= event.location %>
+                    </p>
+                    <p>
+                        Host: <%= event.host %>
+                    </p>
+
+                </a>
+            </div>
+            <% }); %>
+
+    </section>
+
+
+
+
+
+
+
+    <% include partials/footer %>

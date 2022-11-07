@@ -1,0 +1,34 @@
+<% include partials/header %>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>
+                <span>
+                    Update Remark
+                </span>
+            </h3>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="remark">
+            <div class=" remark-form">
+                <form action="/remarks/<%= remark.id %>" method="POST">
+                    <div class="inputBox">
+                        <textarea class="form-control" id="remark" name="remark" rows="3"
+                            placeholder="Remark about the Event"><%= remark.remark %></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="author" name="author" placeholder="Author Name"
+                            value=" <%= remark.author %>">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <% include partials/footer %>

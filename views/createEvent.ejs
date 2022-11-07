@@ -1,0 +1,36 @@
+<% include partials/header %>
+  <section class="home" id="home">
+    <div class="content">
+      <h3><span> Create Event </span></h3>
+    </div>
+  </section>
+
+  <section class="create-event" id="create-event">
+    <form action="/events" method="post">
+      <div class="inputBox">
+        <input type="text" placeholder="Title" name="title">
+      </div>
+      <div class="inputBox">
+        <textarea name="summary" placeholder="Summary" id="" cols="30" rows="3"></textarea>
+      </div>
+      <div class="inputBox">
+        <input type="text" placeholder="Host Name" name="host">
+      </div>
+      <div class="inputBox">
+        <input type="date" placeholder="Start Date" name="start_date">
+      </div>
+      <div class="inputBox">
+        <input type="date" placeholder="End Date" name="end_date">
+      </div>
+      <div class="inputBox">
+        <input type="text" placeholder="Category" name="event_category">
+      </div>
+      <div class="inputBox">
+        <input type="text" placeholder="Location" name="location">
+      </div>
+      <input type="submit" value="Save Event" class="btn">
+    </form>
+
+  </section>
+
+  <% include partials/footer %>
