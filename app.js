@@ -10,14 +10,21 @@ var eventsRouter = require("./routes/event");
 var remarksRouter = require("./routes/remark");
 
 mongoose.connect("mongodb://localhost/event_management", (err) => {
+  
   console.log(err ? err : "Connected to Database");
+  
+  
 });
 
 var app = express();
 
+
 // view engine setup
+
 app.set("views", path.join(__dirname, "views"));
+
 app.set("view engine", "ejs");
+
 
 app.use(logger("dev"));
 app.use(express.json());
