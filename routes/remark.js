@@ -33,6 +33,10 @@ router.get("/:id/delete", (req, res, next) => {
         res.redirect("/events/" + remark.eventId);
       }
     );
+    
+    
+    
+    
   });
 });
 
